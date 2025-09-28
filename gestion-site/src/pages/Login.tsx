@@ -8,6 +8,8 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const [alerta, setAlerta] = useState({})
 
+  const navigate = useNavigate()
+
 
   const handleSubmit = async (e: SyntheticEvent) =>{
     e.preventDefault()
@@ -19,7 +21,7 @@ const Login = () => {
       return
     }
     if (email === 'admin@email.com' && password === 'admin'){
-      console.log('autenticado')
+      navigate('/cuentas')
     }
     else{
       setAlerta({
